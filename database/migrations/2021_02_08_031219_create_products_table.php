@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('prd_code');
             $table->string('prd_name');
+            $table->string('slug');
             $table->integer('prd_price');
             $table->integer('prd_featured');
             $table->string('prd_status');
