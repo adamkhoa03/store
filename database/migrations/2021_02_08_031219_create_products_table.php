@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('prd_status');
             $table->string('prd_properties');
             $table->string('prd_details');
+            $table->string('cat_name');
             $table->string('prd_img');
             $table->timestamps();
         });

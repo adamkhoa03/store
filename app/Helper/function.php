@@ -46,3 +46,6 @@ function editCategory($category,$parentID,$string,$isParent){
     }
 }
 
+function formatPrice($number){
+    echo number_format($number,0,',','.');
+}
