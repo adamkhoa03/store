@@ -12,42 +12,63 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Sửa sản phẩm</div>
                 <div class="panel-body">
+
+                    <form action="" method="post">
+                        @csrf
                     <div class="row" style="margin-bottom:40px">
                          
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label>Danh mục</label>
                                         <select name="category" class="form-control">
-                                            <option value='1' selected>Nam</option>
-                                            <option value='3'>---|Áo khoác nam</option>
-                                            <option value='2'>Nữ</option>
-                                            <option value='4'>---|Áo khoác nữ</option>
+                                           {{ menuCategory($category,0,"") }}
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Mã sản phẩm</label>
-                                        <input  type="text" name="code" class="form-control" value="SP01">
+                                        <input  type="text" name="code" class="form-control" value="{{ $product->prd_code }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input  type="text" name="name" class="form-control" value="Sản phẩm 1">
+                                        <input  type="text" name="name" class="form-control" value="{{ $product->prd_name }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Giá sản phẩm (Giá chung)</label>
-                                        <input  type="number" name="price" class="form-control" value="150000">
+                                        <input  type="number" name="price" class="form-control" value="{{ $product->prd_price }}">
                                     </div>
                                     <div class="form-group">
                                         <label>Sản phẩm có nổi bật</label>
                                         <select  name="featured" class="form-control">
-                                            <option value="0">Không</option>
+                                            {{-- <option value="0">Không</option>
+                                            <option selected value="1">Có</option> --}}
+                                           
+                                            @if ($product->prd_featured == 1)
                                             <option selected value="1">Có</option>
+                                            @else
+                                            <option value="1">Có</option> 
+                                            @endif
+                                            @if ($product->prd_featured == 0)
+                                            <option selected value="0">Không</option>
+                                            @else
+                                            <option value="0">Không</option>
+                                            @endif
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Trạng thái</label>
                                         <select  name="state" class="form-control">
+                                            {{-- <option value="1">Còn hàng</option>
+                                            <option selected value="0">Hết hàng</option> --}}
+                                            @if ($product->prd_status == 1)
+                                            <option selected value="1">Còn hàng</option>
+                                            @else
                                             <option value="1">Còn hàng</option>
+                                            @endif
+                                            @if ($product->prd_status == 0)
                                             <option selected value="0">Hết hàng</option>
+                                            @else
+                                            <option value="0">Hết hàng</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -62,7 +83,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Thông tin</label>
-                                        <textarea  name="info" style="width: 100%;height: 100px;"></textarea>
+                                        <textarea  name="info" style="width: 100%;height: 100px;">{{ $product->prd_properties }}</textarea>
                                     </div>
                                 </div>
                     </div>
@@ -70,13 +91,14 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Miêu tả</label>
-                                    <textarea id="editor"  name="describe" style="width: 100%;height: 100px;"></textarea>
+                                    <textarea id="editor"  name="describe" style="width: 100%;height: 100px;">{{ $product->prd_details }}</textarea>
                                 </div>
                                 <button class="btn btn-success" name="add-product" type="submit">Sửa sản phẩm</button>
                                 <button class="btn btn-danger" type="reset">Huỷ bỏ</button>
                             </div>
                         </div>
                     <div class="clearfix"></div>
+                </form>
                 </div>
             </div>
 

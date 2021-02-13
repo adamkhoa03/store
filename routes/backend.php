@@ -42,6 +42,7 @@ Route::group(['prefix' => 'quan-tri','namespace'=>'Admin','middleware'=>'checkad
         Route::post('them-san-pham.html', 'ProductController@postAdd');
         Route::get('sua-san-pham/{id}.html', 'ProductController@getEdit')->name('product.edit');
         Route::post('sua-san-pham/{id}.html', 'ProductController@postEdit');
+        Route::get('search_submit','ProductController@searchSubmit')->name('search_submit');
         Route::get('xoa-san-pham/{id}', 'ProductController@delete')->name('product.delete');
     });
 
