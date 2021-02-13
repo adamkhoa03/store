@@ -37,6 +37,16 @@
                             <a href="{{ route('product.add') }}" class="btn btn-primary">Thêm sản phẩm</a>
                             <table class="table table-bordered" style="margin-top:20px;">
 
+                                <!-- Laravel scout + agolia -->
+                                <div style="float: right" class="aa-input-container" id="aa-input-container">
+                                    <form method="get" action="{{ route('search_submit') }}">
+                                        <input type="search" id="aa-search-input" class="aa-input-search"
+                                            placeholder="Nhập từ khóa tìm kiếm" name="search" autocomplete="off" />
+                                          <input type="submit" value="Tìm kiếm">
+                                    </form>
+                                </div>
+
+                                <!-- /Laravel scout + agolia -->
                                 <thead>
                                     <tr class="bg-primary">
                                         <th>ID</th>

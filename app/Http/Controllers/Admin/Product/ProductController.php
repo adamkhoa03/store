@@ -17,7 +17,8 @@ class ProductController extends Controller
 
     //Add
     public function getAdd(){
-        return view('Backend.Product.addproduct');
+        $category = Category::all();
+        return view('Backend.Product.addproduct',compact('category'));
     }
     public function postAdd(){
         return view('Backend.Product.addproduct');
@@ -32,6 +33,18 @@ class ProductController extends Controller
     public function postEdit($id){
         return redirect()->back();
     }
+
+
+    //Search
+    public function searchSubmit(Request $request){
+    $product = Product::paginate(3);
+    $array_search = explode(' ',$request->search);
+    $search = Product::where('prd_name','like','%'.implode('%',$array_search).'%')->orWhere('prd_code','like',$request->search)->get();
+    $count = $search->count();
+    return view('Backend.Product.search',compact('product','search','count'));
+    }
+
+
 
     //Delete
     public function delete(){
