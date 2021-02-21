@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AddProductRequest;
 use App\Model\Admin\Category;
 use App\Model\Admin\Product;
 use Illuminate\Http\Request;
@@ -20,8 +21,9 @@ class ProductController extends Controller
         $category = Category::all();
         return view('Backend.Product.addproduct',compact('category'));
     }
-    public function postAdd(){
-        return view('Backend.Product.addproduct');
+    public function postAdd(AddProductRequest $request){
+        
+        return redirect()->back();
     }
 
     //Edit
