@@ -11,7 +11,7 @@ Route::group(['namespace'=>'Admin'], function () {
     Route::get('logout', 'LogoutController@logout')->name('logout');
 });
 
-Route::group(['prefix' => 'quan-tri','namespace'=>'Admin','middleware'=>'checkadmin'], function () {
+Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>'checkadmin'], function () {
 
     //dashboard
     Route::get('/', 'AdminController@index')->name('admin.index');
