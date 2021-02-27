@@ -39,17 +39,17 @@ class ProductController extends Controller
 
     //Search
     public function searchSubmit(Request $request){
-    $product = Product::paginate(3);
-    $array_search = explode(' ',$request->search);
-    $search = Product::where('prd_name','like','%'.implode('%',$array_search).'%')->orWhere('prd_code','like',$request->search)->get();
-    $count = $search->count();
-    return view('Backend.Product.search',compact('product','search','count'));
+    $product = Product::search($request->search)->paginate(3);
+    $count = count($product);
+    return view('Backend.Product.search',compact('product','count'));
     }
 
 
 
     //Delete
-    public function delete(){
-        
+    public function delete($id){
+        $prd = Product::find($id)->prd_name;
+        // Product::find($id)->delete();
+        return redirect()->route('product.index')->with('alert','Bạn đã xóa sản phẩm '.$prd.' thành công')->with('key','danger');
     }
 }

@@ -59,7 +59,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($search as $item)
+                                @foreach ($product as $item)
                                 
                           
                                 <tr>
@@ -86,7 +86,7 @@
                                     <td>{{$item->category->name}}</td>
                                     <td>
                                         <a href="{{ route('product.edit',['id'=>$item->id]) }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-                                        <a href="{{ route('product.delete',['id'=>$item->id]) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                        <a onclick="return confirm('Xác nhận xóa sản phẩm: {{ $item->prd_name }}')" href="{{ route('product.delete',['id'=>$item->id]) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
                                 </tr>
 
