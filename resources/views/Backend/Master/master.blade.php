@@ -34,6 +34,7 @@
 	@yield('product')
 	@yield('order')
 	@yield('processed')
+	@yield('profile')
 	<!--end main-->
 
 	<!-- javascript -->

@@ -26,6 +26,14 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>'checkadmin
         Route::get('xoa-quan-tri/{id}', 'UserController@delete')->name('user.delete');
     });
 
+
+    //Profile
+    Route::group(['prefix'=>'profile','namespace'=>'User'], function(){
+        Route::get('/','UserController@getProfile')->name('profile');
+        Route::post('/', 'UserController@postProfile');
+    });
+
+
     //Category
     Route::group(['prefix' => 'danh-muc','namespace'=>'Category'], function () {
         Route::get('/', 'CategoryController@getCategory')->name('category.index');

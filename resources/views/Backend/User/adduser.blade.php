@@ -15,7 +15,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div class="row justify-content-center" style="margin-bottom:40px">
-                            <form action="" method="post">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="col-md-8 col-lg-8 col-lg-offset-2">
 
                                     <div class="form-group">
@@ -43,6 +43,11 @@
                                         <input type="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại" {{ old('phone') }}>
                                     </div>
                                     {{ showErrors($errors,'phone') }}
+                                    <div class="form-group">
+                                        <label>Ảnh đại diện</label>
+                                        <input type="file" name="avatar">
+                                    </div>
+                                    {{showErrors($errors,'avatar')}}
                                     <div class="form-group">
                                         <label>Level</label>
                                         <select name="level" class="form-control">

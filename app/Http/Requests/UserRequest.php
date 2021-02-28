@@ -30,6 +30,7 @@ class UserRequest extends FormRequest
             'full'=>'required',
             'address'=>'required',
             'phone'=>'required|min:10|max:13',
+            'avatar'=>'mimes:jpg, png, bmp'
         ];
     }
     public function messages()
@@ -43,7 +44,8 @@ class UserRequest extends FormRequest
             'address.required'=>'Địa chỉ không được để trống',
             'phone.required'=>'Số điện thoại không được để trống',
             'phone.min'=>'Bạn chưa nhập đúng định dạng số điện thoại',
-            'phone.max'=>'Bạn chưa nhập đúng định dạng số điện thoại'
+            'phone.max'=>'Bạn chưa nhập đúng định dạng số điện thoại',
+            'avatar.mimes'=>'Định dạng không được hỗ trợ. Vui lòng tải lên định dạng jpg, png hoặc bmp.'
         ];
     }
 }
