@@ -8,7 +8,7 @@
                  }, {
                      // cau hinh hien thi
                      source: autocomplete.sources.hits(index, {
-                         hitsPerPage: 1
+                         hitsPerPage: 10
                      }),
                      displayKey: 'name',
                      templates: {
