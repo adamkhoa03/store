@@ -8,7 +8,7 @@
     <base href="{{ asset('') }}backend/">
 	<!-- css -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="css/agolia.css">
 	<link href="css/styles.css" rel="stylesheet">
 	<!--Icons-->
 	<script src="js/lumino.glyphs.js"></script>

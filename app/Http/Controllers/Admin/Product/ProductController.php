@@ -41,7 +41,8 @@ class ProductController extends Controller
     public function searchSubmit(Request $request){
     $product = Product::search($request->search)->paginate(3);
     $count = count($product);
-    return view('Backend.Product.search',compact('product','count'));
+    $keyword = $request->search;
+    return view('Backend.Product.search',compact('product','count','keyword'));
     }
 
 

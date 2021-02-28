@@ -29,11 +29,7 @@
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-                            {{-- <div class="alert bg-success" role="alert">
-                                <svg class="glyph stroked checkmark">
-                                    <use xlink:href="#stroked-checkmark"></use>
-                                </svg>Đã thêm thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                            </div> --}}
+                          
                             <a href="{{ route('product.add') }}" class="btn btn-primary">Thêm sản phẩm</a>
                            @if ($count>0)
                            <table class="table table-bordered" style="margin-top:20px;">
@@ -41,9 +37,9 @@
                             <!-- Laravel scout + agolia -->
                             <div style="float: right" class="aa-input-container" id="aa-input-container">
                                 <form method="get" action="{{ route('search_submit') }}">
-                                    <input type="search" id="aa-search-input" class="aa-input-search" required
-                                        placeholder="Nhập từ khóa tìm kiếm" name="search" autocomplete="off" />
-                                      <input type="submit" value="Tìm kiếm">
+                                    <input style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+                                    font-size: 14px; padding: 8px;" type="search" id="aa-search-input" class="aa-input-search" required
+                                        placeholder="Nhập từ khóa tìm kiếm..." name="search" autocomplete="off" />
                                 </form>
                             </div>
 
@@ -101,12 +97,11 @@
                                 <form method="get" action="{{ route('search_submit') }}">
                                     <input type="search" id="aa-search-input" class="aa-input-search"
                                         placeholder="Nhập từ khóa tìm kiếm" name="search" autocomplete="off" />
-                                      <input type="submit" value="Tìm kiếm">
                                 </form>
                             </div>
 
                             <!-- /Laravel scout + agolia -->
-                            <div style="margin-top: 8px;" class="alert alert-danger">Không có kết quả tìm kiếm</div>
+                        <div style="margin-top: 20px;" class="alert alert-danger">Không có kết quả tìm kiếm với từ khóa "{{$keyword}}"</div>
                            @endif
                            
                             <div align='right'>
