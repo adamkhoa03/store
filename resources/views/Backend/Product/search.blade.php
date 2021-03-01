@@ -62,7 +62,7 @@
                                     <td>{{ $item->id }}</td>
                                     <td>
                                         <div class="row">
-                                            <div class="col-md-3"><img src="img/ao-khoac.jpg" alt="Áo đẹp" width="100px" class="thumbnail"></div>
+                                            <div class="col-md-3"><img src="{{ $item->prd_img }}" alt="Áo đẹp" width="100px" class="thumbnail"></div>
                                             <div class="col-md-9">
                                                 <p><strong>Mã sản phẩm : {{ $item->prd_code }}</strong></p>
                                                 <p>Tên sản phẩm : {{ $item->prd_name }}</p>

@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-xs-12 col-md-12 col-lg-12">
             <div class="panel panel-primary">
-                <div class="panel-heading"><i class="fas fa-user"></i> Thông tin thành viên</div>
+                <div class="panel-heading"><i class="fas fa-user"></i> Thông tin thành viên "{{ $profile->full }}"</div>
                 <div class="panel-body">
                     <form action="" method="post" enctype="multipart/form-data">
                         @csrf
@@ -51,7 +51,7 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-success"  type="submit">Cập nhật Avatar</button>
+                                    <button class="btn btn-success" style="width: 168px"  type="submit">Cập nhật Avatar</button>
                                 <a href="{{route('profile')}}" class="btn btn-danger" type="button">Huỷ bỏ</a>
                                 </div>
                             </div>
@@ -68,26 +68,4 @@
 </div>
 
 <!--end main-->
-@endsection
-@section('script')
-@parent
-<script>
-    function changeImg(input) {
-        //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            //Sự kiện file đã được load vào website
-            reader.onload = function(e) {
-                //Thay đổi đường dẫn ảnh
-                $('#avatar').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $(document).ready(function() {
-        $('#avatar').click(function() {
-            $('#img').click();
-        });
-    });
-</script>
 @endsection

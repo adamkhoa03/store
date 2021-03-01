@@ -20,6 +20,7 @@ class CategorySeeder extends Seeder
             ['name'=>'Quần Nam','slug'=>'quan-nam','parent'=>1],
             ['name'=>'Áo Nữ','slug'=>'ao-nu','parent'=>2],
             ['name'=>'Quần Nữ','slug'=>'quan-nu','parent'=>2],
+            ['name'=>'Áo Thun Nam','slug'=>'ao-thun-nam','parent'=>3]
         ]);
     }
 }

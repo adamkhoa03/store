@@ -30,7 +30,7 @@ class AddProductRequest extends FormRequest
             'price'=>'required|numeric',
             'info'=>'required',
             'describe'=>'required',
-            'img'=>'required|mimes:jpeg,png,jpg,bmp'
+            'img'=>'required|mimes:jpeg,png,jpg,bmp,gif'
         ];
     }
     public function messages()

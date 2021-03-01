@@ -50,9 +50,9 @@ class UserController extends Controller
     public function getEdit($id)
     {   $users = Users::find($id);
         session(['id'=>$id]);
-        return view('Backend.User.edituser',['users'=>$users]);
+        return view('Backend.User.edituser',compact('users'));
     }
-    public function postEdit($id,Request $request)
+    public function postEdit($id,EditUserRequest $request)
     {
 
         if($request->avatar == ""){

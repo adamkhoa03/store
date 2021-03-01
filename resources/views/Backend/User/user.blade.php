@@ -72,7 +72,7 @@
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->email }}</td>
-                                        <td>{{ $item->full }}</td>
+                                        <td> <img style="width: 30px; height:30px; border-radius:100%; margin-right:8px;" src="{{ $item->avatar }}" alt="">{{ $item->full }}</td>
                                         <td>{{ $item->address }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->level }}</td>
