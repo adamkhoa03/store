@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="Awesome/css/all.css">
 </head>
 <body>
+	@include('Backend.Master.facebook')
 	<!-- header -->
 	@include('Backend.Master.header')
 	<!-- header -->
