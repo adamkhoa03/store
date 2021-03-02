@@ -7,8 +7,29 @@
     <title>Login</title>
     <base href="backend/">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="css/styles.css" rel="stylesheet">
+
+	<style>
+		.fb {
+		  background-color: #3B5998;
+		  color: white;
+		}
+		
+		.twitter {
+		  background-color: #55ACEE;
+		  color: white;
+		}
+		
+		.google {
+		  background-color: #dd4b39;
+		  color: white;
+		}
+		
+		input[type=submit]:hover {
+		  background-color: #45a049;
+		}
+		</style>
 </head>
 
 <body>
@@ -41,6 +62,19 @@
 								{{ $item }}
 							@endforeach
 						</fieldset>
+						<div style="font-size: 15px; margin-top: 15px;">Hoặc đăng nhập với...</div>
+						{{-- Social --}}
+						<div class="col" style="margin-top: 15px">
+							<a href="" class="fb btn">
+							  <i class="fa fa-facebook fa-fw"></i> Facebook
+							</a>
+							<a href="" class="twitter btn">
+							  <i class="fa fa-twitter fa-fw"></i>Twitter
+							</a>
+							<a href="" class="google btn">
+							  <i class="fa fa-google fa-fw"></i>Google+
+							</a>
+						  </div>
 						{{ csrf_field() }}
 					</form>
 				</div>
