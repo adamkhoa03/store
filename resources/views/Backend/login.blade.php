@@ -11,8 +11,8 @@
 	<link href="css/styles.css" rel="stylesheet">
 
 	<style>
-		.fb {
-		  background-color: #3B5998;
+		.git {
+		  background-color: #24292e;
 		  color: white;
 		}
 		
@@ -65,8 +65,8 @@
 						<div style="font-size: 15px; margin-top: 15px;">Hoặc đăng nhập với...</div>
 						{{-- Social --}}
 						<div class="col" style="margin-top: 15px">
-							<a href="" class="fb btn">
-							  <i class="fa fa-facebook fa-fw"></i> Facebook
+							<a href="{{ route('auth',['social'=>'github']) }}" class="git btn">
+							  <i class="fa fa-github fa-fw"></i> Github
 							</a>
 							<a href="" class="twitter btn">
 							  <i class="fa fa-twitter fa-fw"></i>Twitter

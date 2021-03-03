@@ -6,6 +6,14 @@
    
 });
 
+//Socialite
+Route::group(['namespace'=>'Admin'], function () {
+    Route::group(['namespace' => 'Socialite'], function () {
+        Route::get('auth/{social}', 'SocialiteController@authentical')->name('auth');
+        Route::get('redirect/{social}', 'SocialiteController@redirect');
+    });
+});
+
 //Logout
 Route::group(['namespace'=>'Admin'], function () {
     Route::get('logout', 'LogoutController@logout')->name('logout');
