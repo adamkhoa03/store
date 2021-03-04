@@ -22,6 +22,6 @@ class Product extends Model
     }
     public function toSearchableArray()
     {
-        return $this->only('prd_name','prd_price');
+        return $this->only('prd_name','prd_img');
     }
 }
